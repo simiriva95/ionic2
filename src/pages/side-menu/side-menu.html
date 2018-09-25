@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only menuToggle="left">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Side Menu</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only menuToggle="right">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding text-center>
+  <img src="http://www.opensourcetechnologies.com/wp-content/uploads/2013/12/ost_logo.png">
+  <p>IONIC 3 sidemenu example with different type of the customizable side menu option powered by Opensource Technologies.</p>
+  <button ion-button block color="secondary" (click)="changeMenu(MENU.DEFAULT)">Default ionic sidemenu</button>
+  <button ion-button block color="danger" (click)="changeMenu(MENU.AVATAR)">Sidemenu with profile image avatar</button>
+  <button ion-button block color="black" (click)="changeMenu(MENU.MATERIAL)">Material Design Sidemenu</button>
+  <button ion-button block color="dark" (click)="changeMenu(MENU.DARK)">Dark Sidemenu</button>
+  <button ion-button block color="green" (click)="changeMenu(MENU.RIGHT)">Right Sidemenu</button>
+</ion-content>

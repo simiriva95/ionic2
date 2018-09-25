@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons left>
+      <button ion-button icon-only (click)="welcomePage()">
+        <ion-icon ios="ios-arrow-round-back" md="md-arrow-round-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>{{ 'Sign up' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <form (submit)="doSignup()">
+    <ion-list>
+
+      <ion-item>
+        <ion-label fixed>{{ 'NAME' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.name" name="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>{{ 'Phone' | translate }}</ion-label>
+        <ion-input type="number" [(ngModel)]="account.number" name="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label>
+        <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
+        <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>{{ 'Date Of Birth' | translate }}</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY"></ion-datetime>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label>Gender</ion-label>
+        <ion-select>
+          <ion-option value="f">Female</ion-option>
+          <ion-option value="m">Male</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Interest</ion-label>
+        <ion-select multiple="true" okText="Okay" cancelText="Dismiss">
+          <ion-option>Coading</ion-option>
+          <ion-option>Watching</ion-option>
+          <ion-option>Partying</ion-option>
+          <ion-option>Playing</ion-option>
+          <ion-option>Gyming</ion-option>
+          <ion-option>Singing</ion-option>
+        </ion-select>
+      </ion-item>
+
+
+      <div padding>
+        <button ion-button class="signUpBtn" block>{{ 'SIGNUP_BUTTON' | translate }}</button>
+      </div>
+
+    </ion-list>
+  </form>
+</ion-content>

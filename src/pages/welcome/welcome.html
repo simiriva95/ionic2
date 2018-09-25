@@ -1,0 +1,31 @@
+<ion-content scroll="false">
+  <div class="fixed-content">
+    <div class="logoHeader">
+      <img alt="logo" height="60" style="position: relative" src="../assets/img/icon-512x512.png">
+    </div>
+    <h1 class="welcomeHeader">COMPANY</h1>
+    <form *ngIf="form" [formGroup]="form" (ngSubmit)="signIn()">
+      <div padding>
+        <ion-input type="email"  [(ngModel)]="account.email" class="input-access-code" placeholder="Email" formControlName="user_name"></ion-input>
+        <br>
+        <ion-input type="password" [(ngModel)]="account.password" class="input-access-code" placeholder="Password" formControlName="user_pass"></ion-input>
+        <br>
+        <a href="/#/users_lists">
+          <button ion-button block class="login">{{ 'LOGIN' | translate }}</button>
+        </a>
+        <p style="text-align:center;color:  #1ABC9C;">-or-</p>
+        <a href="/#/users_lists">
+          <button ion-button block class="signup" style="padding: 21px !important; background: black!important;">{{
+            'FACEBOOK' |
+            translate }}
+          </button>
+        </a>
+        <div class="create_account">
+          <a href="/#/signup">Create Account</a>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+        </div>
+      </div>
+    </form>
+  </div>
+
+</ion-content>
+

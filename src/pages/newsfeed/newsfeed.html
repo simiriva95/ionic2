@@ -1,0 +1,55 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons left>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>{{ 'News Feed' | translate }}</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="addNewsFeed()" ><ion-icon name="add"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-card *ngFor="let item of cardItems">
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img [src]="item.user_avtar">
+      </ion-avatar>
+      <h2>{{item.user_name}}</h2>
+      <p>{{item.date}}</p>
+    </ion-item>
+
+    <img (tap)="dblClickEvent($event,item.user_name)"  [src]="item.image">
+
+    <ion-card-content>
+      <p>{{item.content}}</p>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button color="primary" clear small icon-start>
+          <ion-icon name='thumbs-up'></ion-icon>
+          {{likes}} Likes
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button color="primary" clear small icon-start>
+          <ion-icon name='text'></ion-icon>
+          4 Comments
+        </button>
+      </ion-col>
+      <ion-col center text-center>
+        <ion-note>
+          11h ago
+        </ion-note>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>
